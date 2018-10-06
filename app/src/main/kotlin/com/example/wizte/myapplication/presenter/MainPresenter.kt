@@ -1,18 +1,19 @@
 package com.example.wizte.myapplication.presenter
 
-import android.util.Log
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
+import com.example.wizte.myapplication.Interactor.GetPhotoListener
+import com.example.wizte.myapplication.Interactor.PhotoInteractor
 import com.example.wizte.myapplication.model.Photo
 import com.example.wizte.myapplication.view.MainView
 
 @InjectViewState
 class MainPresenter : MvpPresenter<MainView>(), IMainPresenter, GetPhotoListener {
 
-   private var interactorMainPresenter : InteractorMainPresenter = InteractorMainPresenter()
+   private var photoInteractor = PhotoInteractor()
 
    override fun loadPhotosApi() {
-      interactorMainPresenter.getPhotosInService(this)
+      photoInteractor.getPhotosInService(this)
    }
 
    override fun onComplete(photos: List<Photo>) {

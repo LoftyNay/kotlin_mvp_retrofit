@@ -15,21 +15,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 //fixme
 class MainActivity : MvpActivity(), MainView, View.OnClickListener {
 
-   override fun errorLoadPhotos(throwable: Throwable) {
-      Toast.makeText(applicationContext, throwable.toString(), Toast.LENGTH_SHORT).show()
-
-   }
-
    @InjectPresenter
    lateinit var mainPresenter: MainPresenter
-
-   override fun showLoadPhotos(photos: List<Photo>) {
-      Toast.makeText(applicationContext, photos.size.toString(), Toast.LENGTH_SHORT).show()
-   }
-
-   override fun onClick(ed: View?) {
-      mainPresenter.loadPhotosApi()
-   }
 
    override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
@@ -37,5 +24,17 @@ class MainActivity : MvpActivity(), MainView, View.OnClickListener {
 
       val floatingActionButton = findViewById<FloatingActionButton>(R.id.fab)
       floatingActionButton.setOnClickListener(this)
+   }
+
+   override fun onClick(ed: View?) {
+      mainPresenter.loadPhotosApi()
+   }
+
+   override fun showLoadPhotos(photos: List<Photo>) {
+      Toast.makeText(applicationContext, photos.size.toString(), Toast.LENGTH_SHORT).show()
+   }
+
+   override fun errorLoadPhotos(throwable: Throwable) {
+      Toast.makeText(applicationContext, throwable.toString(), Toast.LENGTH_SHORT).show()
    }
 }
