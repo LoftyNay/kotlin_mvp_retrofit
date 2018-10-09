@@ -11,6 +11,14 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent">
 
+      <androidx.recyclerview.widget.RecyclerView
+         android:id="@+id/recyclerMainActivity"
+         android:scrollbarStyle="insideOverlay"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:scrollbars="vertical">
+      </androidx.recyclerview.widget.RecyclerView>
+<!--
       <com.google.android.material.button.MaterialButton
          android:id="@+id/click"
          android:layout_width="wrap_content"
@@ -20,7 +28,7 @@
          app:icon="@drawable/ic_bookmark_black_24dp"
          app:iconPadding="5dp"
          app:layout_anchor="@id/app_bar"
-         app:layout_anchorGravity="center_vertical"/>
+         app:layout_anchorGravity="center_vertical"/> -->
 
       <com.google.android.material.bottomappbar.BottomAppBar
          android:id="@+id/app_bar"
@@ -28,6 +36,7 @@
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
          android:layout_gravity="bottom"
+         app:hideOnScroll="true"
          app:fabCradleRoundedCornerRadius="3dp"/>
 
       <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -37,6 +46,6 @@
          android:elevation="5dp"
          android:foreground="@drawable/ic_launcher_foreground"
          app:layout_anchor="@id/app_bar"/>
-   </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+   </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
