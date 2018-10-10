@@ -2,6 +2,7 @@ package com.example.wizte.myapplication.ui
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +20,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class MainActivity : MvpActivity(), MainView, View.OnClickListener, OnRecyclerItemClickListener {
 
    private val recyclerPhotoAdapter = RecyclerPhotoAdapter(this)
+   private lateinit var progressBar: ProgressBar
 
    @InjectPresenter
    lateinit var mainPresenter: MainPresenter
@@ -48,6 +50,14 @@ class MainActivity : MvpActivity(), MainView, View.OnClickListener, OnRecyclerIt
    override fun recyclerItemClick(pos: Int) {
       Toast.makeText(applicationContext, pos.toString(), Toast.LENGTH_SHORT).show()
       recyclerPhotoAdapter.clearPhotoInPosition(pos)
+   }
+
+   override fun showProgressBar() {
+      progressBar.visibility = View.VISIBLE
+   }
+
+   override fun hideProgressBar() {
+      progressBar.visibility = View.GONE
    }
 
    private fun initRecycler() {

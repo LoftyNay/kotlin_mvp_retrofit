@@ -13,7 +13,9 @@ class MainPresenter : MvpPresenter<MainView>(), IMainPresenter, GetPhotoListener
    private var photoInteractor = PhotoInteractor()
 
    override fun loadPhotosApi() {
+      viewState.showProgressBar()
       photoInteractor.getPhotosInService(this)
+      viewState.hideProgressBar()
    }
 
    override fun onComplete(photos: List<Photo>) {
