@@ -21,6 +21,7 @@ class MainActivity : MvpActivity(), MainView, View.OnClickListener, OnRecyclerIt
 
    private val recyclerPhotoAdapter = RecyclerPhotoAdapter(this)
    private lateinit var progressBar: ProgressBar
+   private lateinit var emptyTextView: View
 
    @InjectPresenter
    lateinit var mainPresenter: MainPresenter
@@ -45,6 +46,14 @@ class MainActivity : MvpActivity(), MainView, View.OnClickListener, OnRecyclerIt
 
    override fun errorLoadPhotos(throwable: Throwable) {
       Toast.makeText(applicationContext, throwable.toString(), Toast.LENGTH_SHORT).show()
+   }
+
+   override fun showTextEmptyRecycler() {
+      emptyTextView.visibility = View.VISIBLE
+   }
+
+   override fun hideTextEmptyRecycler() {
+      emptyTextView.visibility = View.GONE
    }
 
    override fun recyclerItemClick(pos: Int) {

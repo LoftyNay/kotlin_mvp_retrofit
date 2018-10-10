@@ -8,4 +8,6 @@ interface MainView : MvpView {
    fun errorLoadPhotos(throwable: Throwable)
    fun showProgressBar()
    fun hideProgressBar()
+   fun showTextEmptyRecycler()
+   fun hideTextEmptyRecycler()
 }

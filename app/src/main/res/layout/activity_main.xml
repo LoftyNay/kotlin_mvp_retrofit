@@ -19,6 +19,16 @@
             android:layout_gravity="center"
             android:layout_marginBottom="70dp" />
 
+        <TextView
+            android:id="@+id/emptyText"
+            android:text="Пусто"
+            android:visibility="visible"
+            android:textSize="22sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerMainActivity"
             android:layout_width="match_parent"
