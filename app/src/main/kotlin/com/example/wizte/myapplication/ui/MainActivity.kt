@@ -32,6 +32,9 @@ class MainActivity : MvpActivity(), MainView, View.OnClickListener, OnRecyclerIt
 
       initRecycler()
 
+      emptyTextView = findViewById(R.id.emptyText)
+      progressBar = findViewById(R.id.progressBarMainActivity)
+
       val floatingActionButton = findViewById<FloatingActionButton>(R.id.fab)
       floatingActionButton.setOnClickListener(this)
    }

@@ -16,10 +16,10 @@ class MainPresenter : MvpPresenter<MainView>(), IMainPresenter, GetPhotoListener
       viewState.showProgressBar()
       viewState.hideTextEmptyRecycler()
       photoInteractor.getPhotosInService(this)
-      viewState.hideProgressBar()
    }
 
    override fun onComplete(photos: List<Photo>) {
+      viewState.hideProgressBar()
       if (photos.isEmpty()) viewState.showTextEmptyRecycler() else viewState.hideTextEmptyRecycler()
       //Отдаем фото на экран
       viewState.showLoadPhotos(photos)
