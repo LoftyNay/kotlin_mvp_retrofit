@@ -1,4 +1,4 @@
-package com.example.wizte.myapplication.adapters
+package com.example.wizte.myapplication.adapter
 
 interface OnRecyclerItemClickListener {
    fun recyclerItemClick(pos: Int)

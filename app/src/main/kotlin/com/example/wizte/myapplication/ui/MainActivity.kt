@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.arellomobile.mvp.MvpActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.example.wizte.myapplication.R
-import com.example.wizte.myapplication.adapters.OnRecyclerItemClickListener
-import com.example.wizte.myapplication.adapters.RecyclerPhotoAdapter
+import com.example.wizte.myapplication.adapter.OnRecyclerItemClickListener
+import com.example.wizte.myapplication.adapter.RecyclerPhotoAdapter
 import com.example.wizte.myapplication.model.Photo
 import com.example.wizte.myapplication.presenter.MainPresenter
 import com.example.wizte.myapplication.view.MainView

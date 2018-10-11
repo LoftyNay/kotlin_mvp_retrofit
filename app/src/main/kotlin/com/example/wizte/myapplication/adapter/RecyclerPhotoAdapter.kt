@@ -1,4 +1,4 @@
-package com.example.wizte.myapplication.adapters
+package com.example.wizte.myapplication.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,8 +8,10 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wizte.myapplication.R
+import com.example.wizte.myapplication.event.EmptyRecyclerAdapterEvent
 import com.example.wizte.myapplication.model.Photo
 import com.squareup.picasso.Picasso
+import org.greenrobot.eventbus.EventBus
 
 class RecyclerPhotoAdapter(private var onRecyclerItemClickListener: OnRecyclerItemClickListener) :
         RecyclerView.Adapter<RecyclerPhotoAdapter.ViewHolder>() {
@@ -29,6 +31,7 @@ class RecyclerPhotoAdapter(private var onRecyclerItemClickListener: OnRecyclerIt
    fun clearPhotoInPosition(position: Int) {
       this.photos.removeAt(position)
       notifyDataSetChanged()
+      if (photos.isEmpty()) EventBus.getDefault().post(EmptyRecyclerAdapterEvent(true))
    }
 
    fun addPhotoInPosition(photo: Photo, position: Int) {
